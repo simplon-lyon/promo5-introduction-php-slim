@@ -26,18 +26,14 @@
         </style>
     </head>
     <body>
-        <form action="/login" method="POST">
-            <input type="email" name="email" id="">
-            <input type="password" name="password" id="">
-            <input type="submit" value="submit">
-        </form>
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
-
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
-        <?php endif; ?>
+        <p>
+            <?php
+                if ($is_logged){
+                    echo "Welcome " . $email . " !";
+                } else {
+                    echo "Wrong email or password !";
+                }
+            ?>
+        </p>
     </body>
 </html>
